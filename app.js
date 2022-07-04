@@ -20,36 +20,50 @@ let playing = true;
 
 rock.addEventListener('click', function () {
     if (playing) {
+        //Delete anterior message:
+        document.querySelector('.newLine') && document.querySelector('.newLine').remove();
+        //Play:
         player = 1;
         computerPlay();
         console.log(player, comp);
         let msg = round(player, comp);
         let newEl = document.createElement('div')
-        newEl.innerText = msg;
+        newEl.innerHTML = msg;
+        newEl.style.fontSize = '1.5rem';
+        newEl.style.marginTop = '0.7rem';
         newEl.classList.add('newLine');
         document.body.appendChild(newEl);
     }
 })
 paper.addEventListener('click', function () {
     if (playing) {
+        //Delete anterior message:
+        document.querySelector('.newLine') && document.querySelector('.newLine').remove();
+        //Play:
         player = 2;
         computerPlay();
         console.log(player, comp);
         let msg = round(player, comp);
         let newEl = document.createElement('div')
-        newEl.innerText = msg;
+        newEl.innerHTML = msg;
+        newEl.style.fontSize = '1.5rem';
+        newEl.style.marginTop = '0.7rem';
         newEl.classList.add('newLine');
         document.body.appendChild(newEl);
     }
 })
 scissors.addEventListener('click', function () {
     if (playing) {
+        //Delete anterior message:
+        document.querySelector('.newLine') && document.querySelector('.newLine').remove();
+        //Play:
         player = 3;
         computerPlay();
-        console.log(player, comp);
         let msg = round(player, comp);
         let newEl = document.createElement('div')
-        newEl.innerText = msg;
+        newEl.innerHTML = msg;
+        newEl.style.fontSize = '1.5rem';
+        newEl.style.marginTop = '0.7rem';
         newEl.classList.add('newLine');
         document.body.appendChild(newEl);
     }
@@ -67,29 +81,29 @@ scissors.addEventListener('click', function () {
 let round = function (players, comps) {
 
     if (players === 1 && comps === 1) {
-        return 'Two rocks! Nobody wins.'
+        return 'Two <b>rocks</b>! Nobody wins.'
     } else if (players === 1 && comps === 2) {
         cWins();
-        return 'Paper covers rock! You lose.'
+        return '<b>Paper</b> covers <b>rock</b>! You lose.'
     } else if (players === 1 && comps === 3) {
         pWins();
-        return 'Rock blunts scissors! You win.'
+        return '<b>Rock</b> blunts <b>scissors</b>! You win.'
     } else if (player === 2 && comp === 1) {
         pWins();
-        return 'Paper covers rock! You win.'
+        return '<b>Paper</b> covers <b>rock</b>! You win.'
     } else if (player === 2 && comp === 2) {
-        return 'Two papers! Nobody wins'
+        return 'Two <b>papers</b>! Nobody wins'
     } else if (player === 2 && comp === 3) {
         cWins();
-        return 'Scissors cuts paper! You lose.'
+        return '<b>Scissors</b> cuts <b>paper</b>! You lose.'
     } else if (player === 3 && comp === 1) {
         cWins();
-        return 'Rock blunts scissors! You lose.'
+        return '<b>Rock</b> blunts <b>scissors</b>! You lose.'
     } else if (player === 3 && comp === 2) {
         pWins();
-        return 'Scissors cuts paper! You win.'
+        return '<b>Scissors</b> cuts <b>paper</b>! You win.'
     } else if (player === 3 && comp === 3) {
-        return 'Two scissors! Nobody wins.'
+        return 'Two <b>scissors</b>! Nobody wins.'
     }
 
 }
