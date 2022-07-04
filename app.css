@@ -38,6 +38,8 @@ img {
 
 .all {
     margin: 7%;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 .scoreDisplay {
@@ -71,7 +73,7 @@ img {
 
 .title {
     text-align: center;
-    margin-bottom: 7%;
+    margin-bottom: 4%;
     font-size: 3.5rem;
     font-weight: 600;
 }
